@@ -51,6 +51,7 @@
                 "visualstudioexptteam.vscodeintellicode",
                 "visualstudioexptteam.intellicode-api-usage-examples",
                 "ms-azuretools.vscode-docker",
+                "cweijan.vscode-postgresql-client2",
                 // python
                 "ms-python.python",
                 "ms-python.vscode-pylance",
