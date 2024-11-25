@@ -9,7 +9,7 @@
 ====== End ======*/
 $(function() {
   "use strict";
-  
+
   /*======== 1. RECNT ORDERS ========*/
   if ($("#recent-orders")) {
     var start = moment().subtract(29, "days");

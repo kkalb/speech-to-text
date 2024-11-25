@@ -256,9 +256,9 @@ $(document).ready(function () {
           '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
       });
     }
-  
+
     var popover = $('[data-toggle="popover"]')
-  
+
     if(popover.length != 0){
       popover.popover();
     }

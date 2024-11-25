@@ -33,7 +33,7 @@
 
 $(document).ready(function() {
   "use strict";
-  
+
   /*======== 1. DUAL LINE CHART ========*/
   var dual = document.getElementById("dual-line");
   if (dual !== null) {

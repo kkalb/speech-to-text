@@ -38,8 +38,7 @@ class TextListView(ListView):
 
     def get_queryset(self, *args, **kwargs):
         qs = super().get_queryset(*args, **kwargs)
-        qs = qs.order_by("-id")
-        return qs
+        return qs.order_by("-id")
 
 
 text_list_view = TextListView.as_view()

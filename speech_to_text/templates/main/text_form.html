@@ -2,10 +2,7 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}
-
-{% endblock %}
-
+{% block title %}{% endblock %}
 {% block content %}
   <h3 class="text-uppercase">New Text</h3>
   <form class="form-horizontal" method="post" action="{% url 'text:add' %}">

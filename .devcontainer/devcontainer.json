@@ -29,6 +29,15 @@
         "vscode": {
             "settings": {
                 "editor.formatOnSave": true,
+                "files.associations": {
+                    "**/*.html": "html",
+                    "**/views/**/*.html": "django-html",
+                    "**/templates/*/*.html": "django-html",
+                    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+                },
+                "emmet.includeLanguages": {
+                    "django-html": "html"
+                },
                 "[python]": {
                     "analysis.autoImportCompletions": true,
                     "analysis.typeCheckingMode": "basic",
@@ -41,10 +50,12 @@
                     "linting.enabled": true,
                     "linting.mypyEnabled": true,
                     "linting.mypyPath": "/usr/local/bin/mypy"
+                },
+                "[django-html]": {
+                    "editor.formatOnSave": false,
+                    "editor.defaultFormatter": "junstyle.vscode-django-support"
                 }
             },
-            // https://code.visualstudio.com/docs/remote/devcontainerjson-reference#_vs-code-specific-properties
-            // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "davidanson.vscode-markdownlint",
                 "mrmlnc.vscode-duplicate",

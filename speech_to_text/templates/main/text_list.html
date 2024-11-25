@@ -2,7 +2,6 @@
 
 {% block content %}
   <h1>Texts</h1>
-
   <table class="table table-bordered">
     <thead class="">
       <tr>
@@ -19,7 +18,10 @@
           <td>
             <center>
               <a class="btn btn-sm btn-warning edit" name="{{ text.id }}">Edit</a>
-              <form class="btn" onsubmit="return confirm('Are you sure?');" action="{% url 'text:delete' text.id %}" method="POST">
+              <form class="btn"
+                    onsubmit="return confirm('Are you sure?');"
+                    action="{% url 'text:delete' text.id %}"
+                    method="POST">
                 {% csrf_token %}
                 <button class="btn btn-danger btn-sm">Delete</button>
               </form>
@@ -29,7 +31,6 @@
       {% endfor %}
     </tbody>
   </table>
-
   <form action="{% url 'text:add' %}" method="post" class="ml-2">
     {% csrf_token %}
     {{ form }}
