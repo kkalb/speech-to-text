@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Texts</h1>
+  <table class="table table-bordered">
+    <thead class="">
+      <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for text in text_list %}
+        <tr>
+          <td>{{ text.id }}</td>
+          <td>{{ text.data }}</td>
+          <td>
+            <center>
+              <a class="btn btn-sm btn-warning edit" name="{{ text.id }}">Edit</a>
+              <form class="btn"
+                    onsubmit="return confirm('Are you sure?');"
+                    action="{% url 'text:delete' text.id %}"
+                    method="POST">
+                {% csrf_token %}
+                <button class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </center>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <form action="{% url 'text:add' %}" method="post" class="ml-2">
+    {% csrf_token %}
+    {{ form }}
+    <input class="btn btn-outline-primary" type="submit" value="Add new text" />
+  </form>
+{% endblock %}

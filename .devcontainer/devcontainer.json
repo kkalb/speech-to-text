@@ -29,6 +29,15 @@
         "vscode": {
             "settings": {
                 "editor.formatOnSave": true,
+                "files.associations": {
+                    "**/*.html": "html",
+                    "**/views/**/*.html": "django-html",
+                    "**/templates/*/*.html": "django-html",
+                    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+                },
+                "emmet.includeLanguages": {
+                    "django-html": "html"
+                },
                 "[python]": {
                     "analysis.autoImportCompletions": true,
                     "analysis.typeCheckingMode": "basic",
@@ -40,22 +49,28 @@
                     "languageServer": "Pylance",
                     "linting.enabled": true,
                     "linting.mypyEnabled": true,
-                    "linting.mypyPath": "/usr/local/bin/mypy",
+                    "linting.mypyPath": "/usr/local/bin/mypy"
+                },
+                "[django-html]": {
+                    "editor.formatOnSave": false,
+                    "editor.defaultFormatter": "junstyle.vscode-django-support"
                 }
             },
-            // https://code.visualstudio.com/docs/remote/devcontainerjson-reference#_vs-code-specific-properties
-            // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "davidanson.vscode-markdownlint",
                 "mrmlnc.vscode-duplicate",
                 "visualstudioexptteam.vscodeintellicode",
                 "visualstudioexptteam.intellicode-api-usage-examples",
+                "ms-azuretools.vscode-docker",
+                "cweijan.vscode-postgresql-client2",
+                "hossaini.bootstrap-intellisense",
                 // python
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "charliermarsh.ruff",
                 // django
-                "batisteo.vscode-django"
+                "batisteo.vscode-django",
+                "junstyle.vscode-django-support"
             ]
         }
     },
@@ -64,5 +79,9 @@
     // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
     // "shutdownAction": "none",
     // Uncomment the next line to run commands after the container is created.
-    "postCreateCommand": "cat .devcontainer/bashrc.override.sh >> ~/.bashrc"
+    "postCreateCommand": "cat .devcontainer/bashrc.override.sh >> ~/.bashrc",
+    // Allow the devcontainer to run host docker commands, see https://github.com/devcontainers/templates/tree/main/src/docker-outside-of-docker
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    }
 }
